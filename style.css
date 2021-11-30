@@ -1,0 +1,212 @@
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 1.77rem;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+h4 {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+button {
+    padding: 0.7rem;
+}
+
+.nav {
+    max-height: 5vh;
+    min-height: 2vh;
+    background-color: darkviolet;
+    padding: 1rem;
+}
+
+.header {
+    max-width: 100%;
+}
+
+.footer {
+    margin-top: auto;
+    max-width: 100%;
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem 0rem 2rem 0rem;
+}
+
+.cardContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: stretch;
+}
+
+.bookCard {
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: lightpink;
+    display: flex;
+    flex-direction: column;
+    width: 15rem;
+    box-shadow: 0px 0px 16px -10px;
+}
+
+.innerCard {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    margin-bottom: 2rem;
+}
+
+.deleteButton {
+    position: relative;
+    left: 100%;
+    height: 1rem;
+    width: 1rem;
+    top: -10%;
+    transition: width 0.3s;
+}
+
+.deleteButton:hover {
+    height: 1.2rem;
+    width: 1.2rem;
+    top: calc((-10%) - 0.1rem);
+    margin-bottom: -0.2rem;
+    left: calc(100% - 0.1rem);
+}
+
+.pagesAndStatus {
+    display: flex;
+    flex-direction: row;
+    margin-top: auto;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.bookLength {
+    width: 50%;
+    padding: 1rem 0rem 1rem 0rem;
+}
+
+.bookStatus {
+    background-color: red;
+    padding: 1rem;
+    border-radius: 0.77rem;
+    align-self: flex-end;
+    border: 0px;
+    box-shadow: 0px 0px 16px -10px;
+    transition: opacity 0.1s ease-in-out 0.1s;
+}
+
+.bookStatus.bookRead {
+    background-color: green;
+}
+
+.bookStatus:hover {
+    opacity: 0.8;
+}
+
+.addButton {
+    margin-top: 1rem;
+}
+
+#popup {
+    display:none;
+    position:fixed;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+    z-index:10;
+}
+#popupOverlay {
+    position:fixed;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+    background:black;
+    opacity:0.5;
+    z-index:11;
+}
+#popupContent {
+    padding: 1rem;
+    position:relative;
+    text-align:center;
+    width:33%;
+    margin:0 auto;
+    height:auto;
+    background: lightcoral;
+    margin-top:30vh;
+    border:1px solid;
+    z-index:12;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+    border-radius: 1rem;
+}
+
+#popupContent > h4:nth-child(1) {
+    margin-bottom: 1rem;
+}
+
+.togglePopup {
+    margin-top: 1rem;
+}
+
+.textInput {
+    border-radius: 0.3rem;
+    border: 0px;
+    box-shadow: black;
+    height: 1.5rem;
+}
+
+.flex {
+    display: flex;
+}
+
+.row {
+    flex-direction: row;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.h-100 {
+    height: 100%;
+}
