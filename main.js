@@ -1,7 +1,8 @@
 const body = document.querySelector('.body');
 const markerButton = document.querySelector('.markerButton')
 const nameInput = document.querySelector('.nameInput')
-const log = document.getElementById('nameValues');
+const restartButton = document.querySelector('.restartButton')
+const congrats = document.querySelector('.congratulationsMessage')
 
 // Gameboard Object and Arrays
 
@@ -12,27 +13,34 @@ const players = (name, marker) => {
     return { name, marker, wins, loses };
 };
 
-const jeff = players('Jeff', 'O');
-
 let player;
+playerChoice = 'X';
 let npc;
 
-// Determine Player's marker
-markerButton.addEventListener('click', updateMarker);
-function updateMarker() {
-
-}
-
-// Determine Player's name
-nameInput.addEventListener('input', updateName);
-function updateName() {
+// Refresh Player Name and Marker
+let refreshPlayer = () => {
     playerName = nameInput.value;
+    playerChoice = markerButton.textContent;
     player = players(playerName, playerChoice);
 }
+nameInput.addEventListener('input', refreshPlayer);
+
+// Refresh Player Marker
+let updateMarker = () => {
+    markerButton.classList.toggle('X');
+    if (markerButton.classList.contains('X')) {
+        markerButton.textContent = 'X'
+    } else {
+        markerButton.textContent = 'O'
+    }
+    refreshPlayer();
+}
+markerButton.addEventListener('click', updateMarker);
+
 
 // Determine NPC Marker based of Player choice
-let getNPCMarker = () => {
-    if (getPlayerMarker == 'X') {
+let getNPCmarker = () => {
+    if (playerChoice == 'X') {
         return 'O';
     } else {
         return 'X';
@@ -40,4 +48,10 @@ let getNPCMarker = () => {
 }
 
 
-npc = players('NPC', getNPCMarker());
+npc = players('NPC', getNPCmarker());
+
+// Restart button functionality
+let resetGame = () => {
+
+}
+restartButton.addEventListener('click', resetGame);

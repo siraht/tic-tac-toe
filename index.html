@@ -20,15 +20,37 @@
         </div>
     </div>
 
-    <div class="main">
+    <div class="main flex column">
 
-        <div>
-            <button class="markerButton xMarker">X</button>
+        <div id="Player Selection">
+            <button class="markerButton X">X</button>
             </button>
             <label for="playerName">Player Name:</label>
             <input type="text" name="Name" id="playerName" class="nameInput">
             <p id="nameValue"></p>
         </div>
+
+        <div class="gameContainer flex row">
+            <div class="leftContainer flex column">
+
+
+                <div>
+                    <h2 class="congratulationsMessage">Congratulations!</h2>
+                </div>
+
+                <div>
+                    <button class="restartButton">Restart!</button>
+                </div>
+            </div>
+
+            <div class="gameBoardContainer">
+
+            </div>
+        </div>
+
+
+
+
 
     </div>
 

@@ -54,88 +54,34 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
     padding: 2rem 0rem 2rem 0rem;
 }
 
-.cardContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-    align-items: stretch;
+.gameContainer {
+    width: 100%;
+    height: 100%;
+    gap: 2rem;
 }
 
-.bookCard {
-    padding: 2rem;
-    border-radius: 1rem;
-    background-color: lightpink;
-    display: flex;
-    flex-direction: column;
-    width: 15rem;
-    box-shadow: 0px 0px 16px -10px;
+.leftContainer {
+    gap: 2rem;
+    width: 30%;
+    align-items: flex-end;
 }
 
-.innerCard {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    gap: 0.3rem;
-    margin-bottom: 2rem;
+.gameBoardContainer {
+    width: 70%;
 }
 
-.deleteButton {
-    position: relative;
-    left: 100%;
-    height: 1rem;
-    width: 1rem;
-    top: -10%;
-    transition: width 0.3s;
-}
-
-.deleteButton:hover {
-    height: 1.2rem;
-    width: 1.2rem;
-    top: calc((-10%) - 0.1rem);
-    margin-bottom: -0.2rem;
-    left: calc(100% - 0.1rem);
-}
-
-.pagesAndStatus {
-    display: flex;
-    flex-direction: row;
-    margin-top: auto;
-    justify-content: space-between;
-    gap: 1rem;
-}
-
-.bookLength {
-    width: 50%;
-    padding: 1rem 0rem 1rem 0rem;
-}
-
-.bookStatus {
-    background-color: red;
+.markerButton {
+    font-size: xx-large;
     padding: 1rem;
-    border-radius: 0.77rem;
-    align-self: flex-end;
+    background-color: skyblue;
     border: 0px;
-    box-shadow: 0px 0px 16px -10px;
-    transition: opacity 0.1s ease-in-out 0.1s;
-}
-
-.bookStatus.bookRead {
-    background-color: green;
-}
-
-.bookStatus:hover {
-    opacity: 0.8;
-}
-
-.addButton {
-    margin-top: 1rem;
+    border-radius: 100px;
+    width: 5rem;
+    height: 5rem;
 }
 
 #popup {
@@ -180,9 +126,6 @@ button {
     margin-bottom: 1rem;
 }
 
-.togglePopup {
-    margin-top: 1rem;
-}
 
 .textInput {
     border-radius: 0.3rem;
