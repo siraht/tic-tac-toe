@@ -1,12 +1,22 @@
 const body = document.querySelector('.body');
-const markerButton = document.querySelector('.markerButton')
-const nameInput = document.querySelector('.nameInput')
-const restartButton = document.querySelector('.restartButton')
-const congrats = document.querySelector('.congratulationsMessage')
+const markerButton = body.querySelector('.markerButton')
+const nameInput = body.querySelector('.nameInput')
+const restartButton = body.querySelector('.restartButton')
+const congrats = body.querySelector('.congratulationsMessage')
+const gameBoard = body.querySelector('.gameBoardContainer')
 
 // Gameboard Object and Arrays
+let gameBoardModule = (function () {
+    for (let index = 9; index > 0; index--) {
+        newDiv = document.createElement('div');
+        newDiv.id = `${index}`
+        newDiv.classList.add('boardSquare');
+        gameBoard.appendChild(newDiv);
+    }
+})();
 
-// Player Constructor
+
+// Player Factory Function
 const players = (name, marker) => {
     const wins = () => `${name} wins!`;
     const loses = () => `${name} loses!`;
