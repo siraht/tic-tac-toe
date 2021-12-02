@@ -21,15 +21,24 @@
     </div>
 
     <div class="main flex column">
+        <div class="flex row">
+            <div id="Player Selection" class="playerSelection">
+                <button class="playerOneMarkerButon markerButton X">X</button>
+                </button>
+                <label for="playerName" style="font-size:1.4rem;"">Player Name:</label>
+                <input type=" text" name="Name" id="playerName" class="nameInput">
+                    <p id="nameValue"></p>
+            </div>
 
-        <div id="Player Selection" class="playerSelection">
-            <h3>Choose your weapon!</h3>
-            <button class="markerButton X">X</button>
-            </button>
-            <label for="playerName" style="font-size:1.4rem;"">Player Name:</label>
-            <input type=" text" name="Name" id="playerName" class="nameInput">
-                <p id="nameValue"></p>
+            <div id="Player Selection" class="playerSelection">
+                <button class="playerTwoMarkerButton markerButton X">X</button>
+                </button>
+                <label for="player2Name" style="font-size:1.4rem;"">Player 2 Name:</label>
+                <input type=" text" name="Name" id="player2Name" class="nameInput">
+                    <p id="nameValue"></p>
+            </div>
         </div>
+
 
         <div class="gameContainer flex row">
             <div class="leftContainer flex column">
