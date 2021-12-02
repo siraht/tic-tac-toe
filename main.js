@@ -1,17 +1,53 @@
+/* let game = (function () { */
 const body = document.querySelector('.body');
 const markerButton = body.querySelector('.markerButton')
 const nameInput = body.querySelector('.nameInput')
 const restartButton = body.querySelector('.restartButton')
 const congrats = body.querySelector('.congratulationsMessage')
-const gameBoard = body.querySelector('.gameBoardContainer')
+const gameBoardContainer = body.querySelector('.gameBoardContainer')
+
 
 // Gameboard Object and Arrays
-let gameBoardModule = (function () {
-    for (let index = 9; index > 0; index--) {
+let gameBoard = (function () {
+    // Marker Listener Function Expression
+    let addMarkerListener = (item) => {
+        item.addEventListener('click', event => {
+            this.textContent = markerButton.textContent;
+            if (!this.textContent) {
+                this.textContent = markerButton.textContent;
+            }
+            else {
+
+            }
+        })
+    }
+    let gameBoardArray = ['', '', '', '', '', '', '', '', '']
+    // New Board Square Function Expression
+    let newBoardSquare = function (index) {
         newDiv = document.createElement('div');
         newDiv.id = `${index}`
         newDiv.classList.add('boardSquare');
-        gameBoard.appendChild(newDiv);
+        gameBoardContainer.appendChild(newDiv);
+        /* newDiv.addEventListener('click', function (index) {
+            if (!this.textContent) {
+                this.textContent = markerButton.textContent;
+            } else {
+
+            }
+        }) */
+
+    };
+    // Create Board from Squares Function Expression
+    let createGameBoard = (function () {
+        for (let index = 0; index < gameBoardArray.length; index++) {
+            newBoardSquare(index);
+
+        }
+        document.querySelectorAll('.boardSquare').forEach(addMarkerListener)
+    })();
+    // Publically available functions - I think
+    return {
+        gameBoardArray: gameBoardArray
     }
 })();
 
@@ -60,8 +96,10 @@ let getNPCmarker = () => {
 
 npc = players('NPC', getNPCmarker());
 
+
 // Restart button functionality
 let resetGame = () => {
 
 }
 restartButton.addEventListener('click', resetGame);
+/* })(); */

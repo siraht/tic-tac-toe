@@ -99,15 +99,18 @@ button {
     justify-content: center;
     align-content: center;
     grid-gap: 1rem;
+    background-color: palevioletred;
+    border-radius: 0.25rem;
 
 }
 
 .boardSquare {
-    border: 2px solid palevioletred;
     border-radius: 0.25rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: white;
+    font-size: 5rem;
 }
 
 .markerButton {
