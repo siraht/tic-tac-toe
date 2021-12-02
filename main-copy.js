@@ -1,7 +1,9 @@
 /* let game = (function () { */
 const body = document.querySelector('.body');
-const markerButton = body.querySelector('.markerButton')
-const nameInput = body.querySelector('.nameInput')
+const playerOneMarkerButton = body.querySelector('.playerOneMarkerButton')
+const playerTwoMarkerButton = body.querySelector('.playerTwoMarkerButton')
+const nameOneInput = body.querySelector('.nameOneInput')
+const nameTwoInput = body.querySelector('.nameTwoInput')
 const restartButton = body.querySelector('.restartButton')
 const congrats = body.querySelector('.congratulationsMessage')
 const gameBoardContainer = body.querySelector('.gameBoardContainer')
@@ -16,8 +18,8 @@ let gameBoard = (function () {
             if (item.textContent || gameOver == true) {
 
             } else {
-                item.textContent = markerButton.textContent;
-                gameBoardArray[item.id] = markerButton.textContent;
+                item.textContent = playerOneMarkerButton.textContent;
+                gameBoardArray[item.id] = playerOneMarkerButton.textContent;
                 gameStarted = true;
                 checkGameEnd();
             }
@@ -65,21 +67,41 @@ let gameBoard = (function () {
     restartButton.addEventListener('click', resetGame);
 
     // Refresh Player Marker
-    let updateMarker = () => {
+    let setInitialPlayerMarkers = (function () {
+        playerOneMarkerButton.textContent = 'X';
+        playerOneMarkerButton.classList.add('X')
+        playerTwoMarkerButton.textContent = 'O';
+    })();
+
+    let updateMarker = (event) => {
         if (gameStarted) {
 
         } else {
-            markerButton.classList.toggle('X');
-            if (markerButton.classList.contains('X')) {
-                markerButton.textContent = 'X'
-            } else {
-                markerButton.textContent = 'O'
+            if (event.target == playerOneMarkerButton) {
+                body.querySelectorAll('.markerButton').forEach(element => element.classList.toggle('X'));
+                if (event.target.classList.contains('X')) {
+                    event.target.textContent = 'X'
+                    playerTwoMarkerButton.textContent = 'O'
+                } else {
+                    event.target.textContent = 'O'
+                    playerTwoMarkerButton.textContent = 'X'
+                }
+            } else if (event.target == playerTwoMarkerButton) {
+                body.querySelectorAll('.markerButton').forEach(element => element.classList.toggle('X'));
+                if (event.target.classList.contains('X')) {
+                    event.target.textContent = 'X'
+                    playerTwoMarkerButton.textContent = 'O'
+                } else {
+                    event.target.textContent = 'O'
+                    playerTwoMarkerButton.textContent = 'X'
+                }
             }
         }
 
         refreshPlayer();
     }
-    markerButton.addEventListener('click', updateMarker);
+    playerOneMarkerButton.addEventListener('click', updateMarker);
+    playerTwoMarkerButton.addEventListener('click', updateMarker);
 
     // Publically available functions - I think
     return {
@@ -95,31 +117,22 @@ const players = (name, marker) => {
     return { name, marker, wins, loses };
 };
 
-let player;
+let playerOne;
+let playerTwo
 playerChoice = 'X';
 let npc;
 
 // Refresh Player Name and Marker
 let refreshPlayer = () => {
-    playerName = nameInput.value;
-    playerChoice = markerButton.textContent;
-    player = players(playerName, playerChoice);
-}
-nameInput.addEventListener('input', refreshPlayer);
-
-
-
-
-// Determine NPC Marker based of Player choice
-let getNPCmarker = () => {
-    if (playerChoice == 'X') {
-        return 'O';
-    } else {
-        return 'X';
-    }
+    playerOneName = nameOneInput.value;
+    playerOneChoice = playerOneMarkerButton.textContent;
+    playerOne = players(playerOneName, playerOneChoice);
+    playerTwoName = nameTwoInput.value;
+    playerTwoChoice = playerTwoMarkerButton.textContent;
+    playerTwo = players(playerTwoName, playerTwoChoice);
 }
 
-
-npc = players('NPC', getNPCmarker());
+nameOneInput.addEventListener('input', refreshPlayer);
+nameTwoInput.addEventListener('input', refreshPlayer);
 
 /* })(); */
