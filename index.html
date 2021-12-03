@@ -21,19 +21,21 @@
     </div>
 
     <div class="main flex column">
-        <div class="flex row">
+        <div class="allPlayerSelection flex row">
             <div id="Player Selection" class="playerSelection">
                 <button class="playerOneMarkerButton markerButton">X</button>
                 </button>
-                <label for="playerName" style="font-size:1.4rem;"">Player Name:</label>
+                <label for="playerName" style="font-size:1.4rem;"">Player One:</label>
                 <input type=" text" name="Name" id="playerName" class="nameOneInput">
                     <p id="nameValue"></p>
             </div>
-
+            <div class="orderDiv">
+                <button class="playOrderButton">Who goes first?</button>
+            </div>
             <div id="Player Selection" class="playerSelection">
                 <button class="playerTwoMarkerButton markerButton">X</button>
                 </button>
-                <label for="player2Name" style="font-size:1.4rem;"">Player 2 Name:</label>
+                <label for="player2Name" style="font-size:1.4rem;"">Player Two:</label>
                 <input type=" text" name="Name" id="player2Name" class="nameTwoInput">
                     <p id="nameValue"></p>
             </div>
@@ -42,11 +44,6 @@
 
         <div class="gameContainer flex row">
             <div class="leftContainer flex column">
-
-
-                <div>
-                    <h2 class="congratulationsMessage">Congratulations!</h2>
-                </div>
 
                 <div>
                     <button class="restartButton">Restart!</button>
